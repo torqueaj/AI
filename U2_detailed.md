@@ -1,4 +1,4 @@
-### Problem-Solving and Search Methods
+## Problem-Solving and Search Methods
 
 This repository provides a comprehensive summary of various problem-solving and search methods commonly used in computer science and artificial intelligence. Each method is explained in terms of its definition, types, steps, advantages, disadvantages, and common problem domains where they are applied.
 
@@ -26,11 +26,9 @@ Uninformed search strategies are algorithms that explore a search space without 
 | AO* Algorithm           | Informed     | Yes          | Yes        | Moderate     | Pathfinding, optimization within bounds |
 
 Search Strategies
-|
 ├── Uninformed Search Strategies
 │   ├── Depth-First Search (DFS)
 │   └── Breadth-First Search (BFS)
-│
 └── Informed Search Strategies
     ├── Best-First Search (BFS)
     ├── A* Algorithm
