@@ -12,8 +12,12 @@ DFS is a graph traversal algorithm that explores as far as possible along each b
 
 ### Steps
 1. Start at the initial node.
+    - Set the initial node as the current node.
 2. Explore as deeply as possible along a branch.
+    - Select an unvisited child node if available and make it the current node.
+    - If no unvisited child nodes are available, backtrack to the parent node.
 3. Backtrack when no unexplored nodes remain.
+    - Move back to the parent node.
 4. Repeat until the goal is found or the entire graph is explored.
 
 ### Advantages
@@ -42,8 +46,11 @@ BFS is a graph traversal algorithm that explores nodes level by level, expanding
 
 ### Steps
 1. Start at the initial node.
+    - Set the initial node as the current node.
 2. Explore all neighboring nodes at the current level before moving to the next level.
+    - Enqueue all unvisited neighboring nodes.
 3. Repeat until the goal is found or the entire graph is explored.
+    - Dequeue the next node from the queue and set it as the current node.
 
 ### Advantages
 - Completeness (guaranteed to find a solution if one exists).
@@ -67,10 +74,15 @@ Best-First Search selects nodes to explore based on a heuristic evaluation, prio
 
 ### Steps
 1. Start at the initial node.
+    - Set the initial node as the current node.
 2. Evaluate the heuristic for available nodes.
+    - Calculate a heuristic value for each unvisited neighboring node.
 3. Choose the node with the best heuristic value.
+    - Select the node with the lowest heuristic value as the current node.
 4. Explore the chosen node.
+    - Enqueue all unvisited neighboring nodes.
 5. Repeat until the goal is found or the search terminates.
+    - Dequeue the next node from the queue and set it as the current node.
 
 ### Advantages
 - Efficiency with a good heuristic.
@@ -97,8 +109,11 @@ No distinct types; a general problem-solving strategy.
 
 ### Steps
 1. Generate possible solutions.
+    - Create candidate solutions based on problem-specific rules.
 2. Test against predefined criteria.
+    - Evaluate each candidate solution against criteria or constraints.
 3. Accept if criteria are met.
+    - If a candidate solution satisfies all criteria, accept it as a solution.
 4. Repeat until a satisfactory solution is found or the search exhausts possibilities.
 
 ### Advantages
@@ -124,8 +139,11 @@ Beam Search is a search algorithm that explores multiple paths simultaneously, k
 
 ### Steps
 1. Start with an initial set of paths (the beam).
+    - Initialize the beam with the initial path(s).
 2. Generate and evaluate successor paths.
+    - Create new paths by extending the current paths.
 3. Select the top-n successor paths based on evaluation.
+    - Choose the best-n paths from the generated successors.
 4. Repeat until the goal is found or a stopping criterion is met.
 
 ### Advantages
@@ -156,9 +174,13 @@ Hill Climbing is a local search optimization algorithm that iteratively improves
 
 ### Steps
 1. Start with an initial solution.
+    - Initialize the current solution.
 2. Generate neighboring solutions.
+    - Create neighboring solutions by making small changes to the current solution.
 3. Select the best neighbor that improves the objective.
+    - Evaluate the objective function for each neighboring solution and choose the best one.
 4. Replace the current solution with the selected neighbor.
+    - Update the current solution with the best neighboring solution.
 5. Repeat until a local optimum is reached or no improvement is possible.
 
 ### Advantages
@@ -183,9 +205,13 @@ No distinct types; variations involve different tabu list strategies.
 
 ### Steps
 1. Start with an initial solution.
+    - Initialize the current solution.
 2. Generate neighboring solutions.
+    - Create neighboring solutions by making small changes to the current solution.
 3. Select the best neighbor that is not in the tabu list.
+    - Evaluate the objective function for each neighboring solution and choose the best one that is not tabu.
 4. Add the selected neighbor to the tabu list.
+    - Update the tabu list with the chosen solution.
 5. Repeat until a stopping criterion is met.
 
 ### Advantages
@@ -208,10 +234,15 @@ No distinct types; variations involve different cooling schedules.
 
 ### Steps
 1. Start with an initial solution.
+    - Initialize the current solution.
 2. Generate a neighboring solution.
+    - Create a neighboring solution by making a small change to the current solution.
 3. Calculate the change in the objective function (delta E).
+    - Compute the difference in objective function values between the current and neighboring solutions.
 4. Accept the neighbor if it improves the objective or with a certain probability if it worsens it.
+    - Accept the neighbor if delta E is negative or with a probability determined by the current temperature.
 5. Repeat until convergence or a stopping condition is met.
+    - Adjust the temperature and continue exploring.
 
 ### Advantages
 - Can escape local optima.
@@ -234,8 +265,11 @@ Constraint Satisfaction is a problem-solving approach where variables must satis
 
 ### Steps
 1. Start with an initial assignment of variables.
+    - Assign values to variables based on problem-specific rules.
 2. Check if the assignment satisfies all constraints.
+    - Verify if all constraints are met by the current assignment.
 3. If constraints are met, the solution is found. If not, modify the assignment and repeat.
+    - If constraints are violated, backtrack and try alternative assignments.
 
 ### Advantages
 - Flexibility and applicability to many problems.
@@ -256,10 +290,15 @@ No distinct types; it's a cognitive problem-solving method.
 
 ### Steps
 1. Identify the final goal.
+    - Define the ultimate objective that needs to be achieved.
 2. Decompose the goal into subgoals and intermediate states.
+    - Break down the final goal into smaller, more achievable subgoals and intermediate states.
 3. Define actions and strategies to achieve subgoals.
+    - Determine the actions and strategies required to move from one state or subgoal to another.
 4. Implement actions to move from one state to another.
+    - Execute the planned actions to progress toward the final goal.
 5. Repeat until the final goal is achieved.
+    - Continue solving subgoals until the ultimate goal is reached.
 
 ### Advantages
 - Structured approach to problem-solving.
