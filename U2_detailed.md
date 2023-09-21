@@ -1,6 +1,41 @@
-# Problem-Solving and Search Methods
+### Problem-Solving and Search Methods
 
 This repository provides a comprehensive summary of various problem-solving and search methods commonly used in computer science and artificial intelligence. Each method is explained in terms of its definition, types, steps, advantages, disadvantages, and common problem domains where they are applied.
+
+### Search Strategies
+
+Search strategies are techniques used to explore problem spaces systematically in order to find solutions. They can be categorized into two main types:
+
+### Informed Search Strategies
+
+Informed search strategies, also known as heuristic search strategies, use additional knowledge or heuristics to guide the search process towards more promising paths in the search space.
+
+### Uninformed Search Strategies
+
+Uninformed search strategies are algorithms that explore a search space without using any additional knowledge about the problem other than the information provided in the problem definition.
+
+
+## Search Strategy Chart
+
+| Search Strategy          | Type         | Completeness | Optimality | Memory Usage | Suitability |
+|-------------------------|--------------|--------------|------------|--------------|-------------|
+| Depth-First Search (DFS) | Uninformed   | No           | No         | Low          | Specific problems with deep search spaces |
+| Breadth-First Search (BFS)| Uninformed   | Yes          | Yes        | High         | Shortest path, complete exploration |
+| Best-First Search (BFS)  | Informed     | No           | No         | Moderate     | Pathfinding, informed search problems |
+| A* Algorithm            | Informed     | Yes          | Yes        | Moderate     | Pathfinding, optimization problems |
+| AO* Algorithm           | Informed     | Yes          | Yes        | Moderate     | Pathfinding, optimization within bounds |
+
+Search Strategies
+|
+├── Uninformed Search Strategies
+│   ├── Depth-First Search (DFS)
+│   └── Breadth-First Search (BFS)
+│
+└── Informed Search Strategies
+    ├── Best-First Search (BFS)
+    ├── A* Algorithm
+    └── AO* Algorithm
+
 
 ## Depth-First Search (DFS)
 **Definition**:
@@ -85,6 +120,64 @@ BFS is characterized by the following steps:
 
 **Common Problem Domains**:
 - Pathfinding in robotics and games, web crawling, natural language processing.
+
+## A* Algorithm
+**Definition**:
+A* (pronounced "A star") is a best-first search algorithm that combines elements of both Dijkstra's algorithm and Best-First Search. It uses a heuristic function to estimate the cost from the start node to the goal node and makes decisions based on both the cost incurred so far and the estimated remaining cost.
+
+A* is characterized by the following steps:
+1. Start at the initial node.
+    - Set the initial node as the current node.
+2. Evaluate the heuristic for available nodes.
+    - Calculate a heuristic value for each unvisited neighboring node.
+3. Calculate the cost incurred from the start node to the current node.
+    - This includes both the actual cost and the estimated cost based on the heuristic.
+4. Choose the node with the lowest combined cost.
+    - Select the node with the lowest total cost as the current node.
+5. Explore the chosen node.
+    - Enqueue all unvisited neighboring nodes.
+6. Repeat until the goal is found or the search terminates.
+    - Dequeue the next node from the queue and set it as the current node.
+
+**Advantages**:
+- Efficient and optimal for many search problems when using an admissible heuristic.
+- Provides an optimality guarantee.
+
+**Disadvantages**:
+- Sensitivity to the quality of the heuristic function.
+- May explore nodes that appear promising but do not lead to the optimal solution.
+
+**Common Problem Domains**:
+- Pathfinding in robotics, navigation systems, game development.
+
+## AO* Algorithm
+**Definition**:
+AO* (Anytime Optimally suboptimal) is an extension of the A* algorithm designed to find solutions that are not necessarily optimal but are within a specified suboptimality bound. It provides a trade-off between solution quality and computation time.
+
+AO* is characterized by the following steps:
+1. Start at the initial node.
+    - Set the initial node as the current node.
+2. Evaluate the heuristic for available nodes.
+    - Calculate a heuristic value for each unvisited neighboring node.
+3. Calculate the cost incurred from the start node to the current node.
+    - This includes both the actual cost and the estimated cost based on the heuristic.
+4. Choose the node with the lowest combined cost.
+    - Select the node with the lowest total cost as the current node.
+5. Explore the chosen node.
+    - Enqueue all unvisited neighboring nodes.
+6. Repeat until a stopping criterion is met.
+    - Dequeue the next node from the queue and set it as the current node.
+
+**Advantages**:
+- Allows for finding suboptimal solutions within specified bounds.
+- Provides flexibility in controlling the trade-off between solution quality and computation time.
+
+**Disadvantages**:
+- Similar to A*, it is sensitive to the quality of the heuristic function.
+- May require additional parameter tuning to achieve desired suboptimality bounds.
+
+**Common Problem Domains**:
+- Pathfinding in robotics, resource allocation, network routing.
 
 ## Generate and Test
 **Definition**:
