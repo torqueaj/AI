@@ -25,14 +25,6 @@ Uninformed search strategies are algorithms that explore a search space without 
 | A* Algorithm            | Informed     | Yes          | Yes        | Moderate     | Pathfinding, optimization problems |
 | AO* Algorithm           | Informed     | Yes          | Yes        | Moderate     | Pathfinding, optimization within bounds |
 
-Search Strategies
-├── Uninformed Search Strategies
-│   ├── Depth-First Search (DFS)
-│   └── Breadth-First Search (BFS)
-└── Informed Search Strategies
-    ├── Best-First Search (BFS)
-    ├── A* Algorithm
-    └── AO* Algorithm
 
 
 ## Depth-First Search (DFS)
